@@ -1,6 +1,11 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+//Gives a random integer between a range
+function random(min, max) {
+  return Math.floor(Math.random()*(max-min) + min);
+}
+
 function generatePassword() {
   //Brings up an alert giving us menu options
    var input = window.prompt("How many characters would you like your password? Min:8 Max:128");
@@ -29,33 +34,46 @@ function generatePassword() {
     window.alert("Must select 'OK' for at least one option!")
     return
    }
-
+  //Creates arrays that contain all of the valid characters in their character catagories
    var listNum = ["0","1","2","3","4","5","6","7","8","9"];
    var listSym = ["!","@","#","$","%","^","&","*","(",")","-","_","=","+","{","[","}","]",":",";","<",">",".","?","/","|"];
    var listLower = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
    var listUpper = [];
-
+  //Takes the listLower and turns each character into an uppercase version, and stores it in listUpper.
    for (var i = 0;i < listLower.length;i++) {
     listUpper[i] = listLower[i].toUpperCase();
    }
-
+  //Creates an empty array to store selected character types arrays as one array
    var includedCharList = [];
-
+  //Adds the numbers array to the selected array
    if (numbers === true) {
-    includedCharList.push(listNum);
+    includedCharList = includedCharList.concat(listNum);
    }
-
+  //Adds the uppercase array to the selected array
    if (uppercase === true) {
-    includedCharList.push(listUpper);
+    includedCharList = includedCharList.concat(listUpper);
    }
-
+  //Adds the lowercase array to the selected array
    if (lowercase === true) {
-    includedCharList.push(listLower);
+    includedCharList = includedCharList.concat(listLower);
    }
-
+  //Adds the special characters array to the selected array
    if (specialCharacters === true) {
-    includedCharList.push(listSym);
+    includedCharList = includedCharList.concat(listSym);
    }
+  //logs the selected array
+   console.log(includedCharList);
+  //Creates a blank array to store the generated password
+   var password = "";
+  //Selects a random character from the list of selected characters for each position for the password length
+   for (var i = 0;i < passLength;i++) {
+    var randomGen = includedCharList[random(0, includedCharList.length - 1)];
+    console.log(randomGen);
+  //Adds each of the randomly selected values to the password string  
+    password = password.concat(randomGen);
+    console.log(password);
+   }
+   return password;
 }
 
 // Write password to the #password input
