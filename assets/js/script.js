@@ -101,7 +101,7 @@ function generatePassword() {
     //If numbers were not requested, validate numbers
       else if (numbers === false) { 
         numCheck = true;
-        console.log("No number needed")
+        console.log("No number needed");
       }
     //If uppercase were requested, ensures that the password contains at least one uppercase, if not, it calls the passowrdGeneration function to make a new password
       if(uppercase === true) {
@@ -119,7 +119,7 @@ function generatePassword() {
     //If uppercase were not requested, validate uppercase
       else if (uppercase === false) {
         upperCheck = true;
-        console.log("No uppercase needed")
+        console.log("No uppercase needed");
       }
     //If lowercase were requested, ensures that the password contains at least one lowercase, if not, it calls the passowrdGeneration function to make a new password
       if(lowercase === true) {
@@ -137,7 +137,7 @@ function generatePassword() {
     //If lowercase were not requested, validate lowercase
       else if (lowercase === false) {
         lowerCheck = true;
-        console.log("No lowercase needed")
+        console.log("No lowercase needed");
       }
     //If symbols were requested, ensures that the password contains at least one symbol, if not, it calls the passowrdGeneration function to make a new password
       if(specialCharacters === true) {
@@ -155,7 +155,7 @@ function generatePassword() {
     //If symbols were not requested, validate symbols
       else if (specialCharacters === false) {
         symCheck = true;
-        console.log("No symbol needed")
+        console.log("No symbol needed");
       }
     }
   //Runs the function which validates that the password contains at least one of each requested character type
