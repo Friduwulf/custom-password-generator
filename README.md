@@ -1,4 +1,4 @@
-# custom-password-generator
+# Custom Passowrd Randomizer
 
 ## Description
 
